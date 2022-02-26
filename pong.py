@@ -34,8 +34,9 @@ paddle_b.goto(350, 0)
 # Ball
 ball = turtle.Turtle()
 ball.speed(0)
-ball.shape("square")
+ball.shape("circle")
 ball.color("white")
+ball.shapesize(stretch_wid=1.25, stretch_len=1.25)
 ball.penup()
 ball.goto(0, 0)
 ball.dx = 0.2
@@ -90,12 +91,12 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        os.system("aplay bounce.wav&")
+        os.system("aplay ball_hit.wav&")
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        os.system("aplay bounce.wav&")
+        os.system("aplay ball_hit.wav&")
 
     if ball.xcor() > 390:
         ball.goto(0, 0)
@@ -116,11 +117,11 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() -50):
         ball.setx(340)
         ball.dx *= -1
-        os.system("aplay bounce.wav&")
+        os.system("aplay ball_hit.wav&")
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() -50):
         ball.setx(-340)
         ball.dx *= -1
-        os.system("aplay bounce.wav&")
+        os.system("aplay ball_hit.wav&")
 
 # This is a test
